@@ -8,6 +8,7 @@ import imageSix from "./fims-Pictures/imageSix.jpg";
 import imageSeven from "./fims-Pictures/imageSeven.jpg";
 import imageEight from "./fims-Pictures/imageEight.jpg";
 import { MoviesContext } from './MovieContext';
+import { FaHeartCircleCheck } from "react-icons/fa6";
 
 function Home() {
     const movies = [
@@ -30,21 +31,20 @@ function Home() {
                     <li key={item.id}>
                         <div className='border border-black max-w-[200px] bg-gray-700 rounded-lg text-white'>
                             <img src={item.img} alt="fim-pic" className='h-40 rounded-lg w-full' />
-                            <ul>
-                                <li><span className='text-yellow-300'>Title:</span> {item.title}</li>
-                                <li><span className='text-yellow-300'>Genre:</span> {item.genre}</li>
-                                <li><span className='text-yellow-300'>Year:</span> {item.year}</li>
-                                <button
-                                    onClick={() => {
-                                        // Check if the item is already in the favorite list
+                   <ul>
+                        <li><span className='text-yellow-300'>Title:</span> {item.title}</li>
+                           <li><span className='text-yellow-300'>Genre:</span> {item.genre}</li>
+                            <li><span className='text-yellow-300'>Year:</span> {item.year}</li>
+                                <button onClick={() => {
+                                        
                                         if (!favorite.find((favItem) => favItem.id === item.id)) {
-                                            // Add to favorite if it's not already there
+                                            
                                             setFavorite([...favorite, item]);
                                         }
                                     }}
                                     className='border border-black rounded-lg p-2 bg-orange-600 hover:bg-orange-700 hover:px-6'
                                 >
-                                    Add to Favorite
+                                 <FaHeartCircleCheck /> Add to Favorite
                                 </button>
                             </ul>
                         </div>

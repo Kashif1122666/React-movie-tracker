@@ -10,6 +10,7 @@ import Footer from './Footer'
 import MoviesContextProvider from './MovieContext'
 
 
+
 function App() {
 
  
